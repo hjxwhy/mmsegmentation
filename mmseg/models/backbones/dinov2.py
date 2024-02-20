@@ -30,8 +30,6 @@ class DINOv2VisionTransformerPretrained(MMPretrain_VisionTransformer):
         self.interpolate_antialias = interpolate_antialias
         self.num_register_tokens = num_register_tokens
         self.patch_size = kwargs.get('patch_size', 14)
-        # base class not call init_weight after init
-        self.init_weights()
 
     def prepare_tokens_with_masks(self, x, masks=None):
         B, nc, w, h = x.shape
